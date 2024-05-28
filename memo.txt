@@ -1,0 +1,58 @@
+1. 리액트는 왜 필요한가?
+복잡한 웹 사이트의 데이터와 화면의 일치가 필요해서 
+
+2. 컴포넌트
+데이터와 화면을 하나로 묶은 덩어리 
+
+3. 특징
+화면에 바뀔 부분을 state로 만든다
+데이터가 바뀌면 화면도 바뀐다
+화면에 나올 부분은 return에다가 구현한다.
+
+4. Babel 
+JSX문법을 JS코드로 바꿔준다 
+        <button onClick={() => this.setState({liked: true})}>
+          Like
+        </button> 
+        위의 코드를 아래의 코드로 바꿔준다. 
+
+        React.createElement('button', {onClick: () => this.setState({liked: true})}, 'Like');
+
+5. 객체를 함부로 바꾸지 말고 복사해라(불변성)
+const array = [] 
+pop, push, shift, unshift, splice  --> 배열을 직접 수정 --> 리액트에서 쓰면 안됨.
+concat, slice  --> 새로운 배열을 만들어냄 
+위와 아래의 차이
+
+
+6. state는 항상 컴포넌트 안에 넣어놔야한다.
+
+※webpack 자바스크립트 코드 하나로 다 합치는거
+lecture 폴더에서 npm init 하면 package.json 생성됨.
+npm i react react-dom
+npm i -D webpack webpack-cli
+
+.js JS파일
+.jsx JSX문법으로 쓴 파일
+
+
+7.  Babel 설치
+npm i -D @babel/core  최신 문법 바꿔주는거
+npm i -D @babel/preset-env   브라우저에 맞게 알아서 최신문법을 예전 문법으로
+npm i -D @babel/preset-react   JSX 바꿔주는거
+npm i -D babel-loader 바벨과 웹팩을 연결
+
+npm i -D @babel/plugin-proposal-class-properties
+
+8.webpack 실행(빌드)
+ a. npx webpack  
+ b. npm run dev
+ package.json에   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack"
+  },
+  주고 npm run dev 
+
+
+
+
